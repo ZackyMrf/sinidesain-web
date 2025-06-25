@@ -351,11 +351,14 @@ export default function LandingPage() {
                       <div className="mb-3">
                         <div className="flex items-center justify-center gap-2 mb-1">
                           <span className="text-2xl sm:text-3xl font-bold text-orange-600">{price}</span>
+                          {title === "Buku Menu" && (
+                            <span className="text-gray-500 text-sm">/halaman</span>
+                          )}
+                          {title === "Slide PPT" && (
+                            <span className="text-gray-500 text-sm">/slide</span>
+                          )}
                           {title !== "Buku Menu" && title !== "Slide PPT" && (
                             <span className="text-gray-500 text-sm">/item</span>
-                          )}
-                          {(title === "Buku Menu" || title === "Slide PPT") && (
-                            <span className="text-gray-500 text-sm">/unit</span>
                           )}
                         </div>
                         <div className="flex items-center justify-center gap-2">
