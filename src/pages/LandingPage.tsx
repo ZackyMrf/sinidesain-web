@@ -226,6 +226,206 @@ export default function LandingPage() {
         </motion.div>
       </section>
 
+      {/* Promo Section */}
+      <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-red-50 via-orange-50 to-yellow-50 border-y-4 border-orange-200">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="inline-block"
+            >
+              <div className="bg-gradient-to-r from-red-600 to-orange-600 text-white px-6 py-3 rounded-full text-lg font-bold mb-4 animate-pulse">
+                🔥 PROMO SPESIAL AKHIR TAHUN 🔥
+              </div>
+            </motion.div>
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-2xl sm:text-3xl lg:text-4xl font-extrabold mb-4 text-gray-900"
+            >
+              Paket <span className="text-orange-600">Super Hemat</span> Untuk Bisnis Anda!
+            </motion.h2>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="text-gray-700 max-w-2xl mx-auto text-sm sm:text-base font-medium"
+            >
+              Dapatkan desain berkualitas profesional dengan harga terjangkau. Promo terbatas, jangan sampai terlewat!
+            </motion.p>
+          </div>
+
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {[
+              {
+                title: "Poster Promosi",
+                price: "20K",
+                originalPrice: "35K",
+                features: ["1 Konsep desain", "2 Revisi", "Pengerjaan 1-2 hari", "File PNG/JPG"],
+                icon: "📸",
+                popular: true
+              },
+              {
+                title: "Pricelist 1 Lembar",
+                price: "35K",
+                originalPrice: "50K",
+                features: ["Layout harga & foto produk", "2 Revisi", "Design menarik", "File siap cetak"],
+                icon: "💰",
+                popular: false
+              },
+              {
+                title: "Daftar Menu Single",
+                price: "40K",
+                originalPrice: "65K",
+                features: ["Cocok gerobak/kafe kecil", "Pengerjaan 24 jam", "Layout profesional", "File print ready"],
+                icon: "📋",
+                popular: true
+              },
+              {
+                title: "Buku Menu",
+                price: "20K",
+                originalPrice: "30K",
+                features: ["Per halaman", "Min. 4 halaman", "Cover +15K", "Design konsisten"],
+                icon: "📖",
+                popular: false
+              },
+              {
+                title: "Banner / X-Banner",
+                price: "35K",
+                originalPrice: "55K",
+                features: ["Ukuran hingga 60×160 cm", "File siap cetak", "Design eye-catching", "High resolution"],
+                icon: "🏷️",
+                popular: false
+              },
+              {
+                title: "Spanduk Besar",
+                price: "70K",
+                originalPrice: "100K",
+                features: ["Ukuran >1 meter", "Layout multi-foto", "Design impactful", "File print ready"],
+                icon: "🎯",
+                popular: false
+              },
+              {
+                title: "Slide PPT",
+                price: "6K",
+                originalPrice: "12K",
+                features: ["Per slide", "Include ikon & infografik", "+Animasi 15K/slide", "Template modern"],
+                icon: "💻",
+                popular: true
+              },
+              {
+                title: "Paket Komplit",
+                price: "150K",
+                originalPrice: "250K",
+                features: ["3 Poster + 1 Pricelist", "1 Banner + 5 Slide PPT", "Hemat 100K!", "Bonus konsultasi"],
+                icon: "🎁",
+                popular: true
+              }
+            ].map(({ title, price, originalPrice, features, icon, popular }, index) => (
+              <motion.div
+                key={title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="relative"
+              >
+                <Card className={`rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 h-full relative overflow-hidden ${popular ? 'ring-2 ring-orange-400 bg-gradient-to-br from-orange-50 to-red-50' : 'bg-white'}`}>
+                  {popular && (
+                    <div className="absolute top-0 right-0 bg-gradient-to-r from-orange-500 to-red-500 text-white text-xs px-3 py-1 rounded-bl-xl font-bold">
+                      HOT! 🔥
+                    </div>
+                  )}
+                  
+                  <CardContent className="p-6 flex flex-col h-full">
+                    <div className="text-center mb-4">
+                      <div className="w-12 h-12 bg-gradient-to-br from-orange-100 to-red-100 rounded-xl flex items-center justify-center text-2xl mb-3 mx-auto">
+                        {icon}
+                      </div>
+                      <h3 className="font-bold text-gray-900 mb-2 text-sm sm:text-base">{title}</h3>
+                      
+                      <div className="mb-3">
+                        <div className="flex items-center justify-center gap-2 mb-1">
+                          <span className="text-2xl sm:text-3xl font-bold text-orange-600">{price}</span>
+                          {title !== "Buku Menu" && title !== "Slide PPT" && (
+                            <span className="text-gray-500 text-sm">/item</span>
+                          )}
+                          {(title === "Buku Menu" || title === "Slide PPT") && (
+                            <span className="text-gray-500 text-sm">/unit</span>
+                          )}
+                        </div>
+                        <div className="flex items-center justify-center gap-2">
+                          <span className="text-gray-400 line-through text-sm">{originalPrice}</span>
+                          <span className="bg-red-100 text-red-600 text-xs px-2 py-1 rounded-full font-medium">
+                            HEMAT {Math.round((1 - parseInt(price.replace('K', '')) / parseInt(originalPrice.replace('K', ''))) * 100)}%
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="flex-grow">
+                      <ul className="space-y-2 mb-4">
+                        {features.map((feature, i) => (
+                          <li key={i} className="flex items-start gap-2 text-xs sm:text-sm">
+                            <div className="w-4 h-4 bg-green-100 rounded-full flex items-center justify-center mt-0.5 flex-shrink-0">
+                              <span className="text-green-600 text-xs">✓</span>
+                            </div>
+                            <span className="text-gray-700 leading-relaxed">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    
+                    <a href="https://wa.me/628813701497" target="_blank" rel="noopener noreferrer" className="block">
+                      <Button 
+                        className={`w-full py-3 rounded-xl font-semibold transition-all duration-300 text-sm ${
+                          popular 
+                            ? 'bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white shadow-lg' 
+                            : 'bg-gray-800 hover:bg-black text-white'
+                        }`}
+                      >
+                        <Phone size={16} className="mr-2" />
+                        Pesan Sekarang
+                      </Button>
+                    </a>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Promo Timer */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-12 text-center"
+          >
+            <div className="bg-gradient-to-r from-red-600 to-orange-600 text-white rounded-2xl p-6 sm:p-8 max-w-4xl mx-auto">
+              <h3 className="font-bold text-xl sm:text-2xl mb-4">⏰ Promo Terbatas!</h3>
+              <p className="text-red-100 mb-6 text-sm sm:text-base">
+                Harga spesial ini hanya berlaku hingga akhir bulan. Jangan sampai terlewat kesempatan emas ini!
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="https://wa.me/628813701497" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+                  <Button size="lg" className="w-full sm:w-auto bg-white text-red-600 hover:bg-gray-100 rounded-xl px-8 text-base sm:text-lg font-bold">
+                    <Phone size={20} className="mr-2" />
+                    Ambil Promo Sekarang!
+                  </Button>
+                </a>
+                <div className="text-red-100 text-sm font-medium">
+                  💬 Fast response dalam 2 jam!
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* About Section */}
       <section id="about" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-6xl mx-auto">
@@ -732,7 +932,7 @@ export default function LandingPage() {
                       </ul>
                     </div>
                     
-                    <a href="https://wa.me/628123456789" target="_blank" rel="noopener noreferrer" className="block">
+                    <a href="https://wa.me/628813701497" target="_blank" rel="noopener noreferrer" className="block">
                       <Button 
                         className={`w-full py-4 rounded-2xl font-semibold transition-all duration-300 ${
                           popular 
@@ -767,7 +967,7 @@ export default function LandingPage() {
                 Kami juga menyediakan paket langganan bulanan dan custom sesuai kebutuhan spesifik bisnis Anda. 
                 Mulai dari Rp 1.5jt/bulan untuk unlimited design request!
               </p>
-              <a href="https://wa.me/628123456789" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/628813701497" target="_blank" rel="noopener noreferrer">
                 <Button variant="outline" size="lg" className="rounded-2xl border-blue-600 text-blue-600 hover:bg-blue-50">
                   Konsultasi Paket Custom
                 </Button>
@@ -796,7 +996,7 @@ export default function LandingPage() {
                 <a href="https://www.instagram.com/sinidesain" className="w-8 h-8 sm:w-10 sm:h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors" target="_blank" rel="noopener noreferrer">
                   <span className="text-sm sm:text-lg">📱</span>
                 </a>
-                <a href="https://wa.me/628123456789" className="w-8 h-8 sm:w-10 sm:h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-green-600 transition-colors" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/628813701497" className="w-8 h-8 sm:w-10 sm:h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-green-600 transition-colors" target="_blank" rel="noopener noreferrer">
                   <span className="text-sm sm:text-lg">💬</span>
                 </a>
                 <a href="mailto:hello@sinidesain.com" className="w-8 h-8 sm:w-10 sm:h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-red-600 transition-colors">
@@ -832,7 +1032,7 @@ export default function LandingPage() {
           <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl sm:rounded-2xl p-6 sm:p-8 text-center mb-8 sm:mb-12">
             <h3 className="text-white font-bold text-lg sm:text-xl mb-3 sm:mb-4">Siap Meningkatkan Brand Anda?</h3>
             <p className="text-blue-100 mb-4 sm:mb-6 text-sm sm:text-base">Konsultasi gratis untuk mengetahui kebutuhan desain bisnis Anda</p>
-            <a href="https://wa.me/628123456789" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/628813701497" target="_blank" rel="noopener noreferrer">
               <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 rounded-xl px-6 sm:px-8 text-sm sm:text-base">
                 <Phone size={18} className="mr-1 sm:mr-2" />
                 Mulai Konsultasi Gratis

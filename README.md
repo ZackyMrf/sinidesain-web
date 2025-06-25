@@ -111,7 +111,7 @@ Sesuaikan warna di `tailwind.config.js` atau langsung di components.
 2. Connect repository di [Vercel](https://vercel.com)
 3. Deploy otomatis
 
-### Netlify
+### Netlif
 1. Build project: `npm run build`
 2. Upload folder `out/` ke Netlify
 
