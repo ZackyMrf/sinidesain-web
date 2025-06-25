@@ -1,4 +1,139 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# 🎨 SiniDesain - Landing Page
+
+Sebuah landing page profesional untuk jasa desain grafis **SiniDesain** yang dibangun dengan Next.js, TypeScript, dan Tailwind CSS.
+
+![SiniDesain Preview](https://via.placeholder.com/800x400/4F46E5/FFFFFF?text=SiniDesain+Landing+Page)
+
+## ✨ Fitur Utama
+
+- 🎯 **Responsive Design** - Optimized untuk mobile, tablet, dan desktop
+- ⚡ **Fast Loading** - Built with Next.js untuk performa optimal
+- 🎭 **Smooth Animations** - Menggunakan Framer Motion
+- 📱 **Mobile-First** - Navbar toggle responsif
+- 🎨 **Modern UI** - Clean design dengan Tailwind CSS
+- 🖼️ **Image Optimization** - Next.js Image component
+- 💼 **Professional Sections**:
+  - Hero dengan gradient text
+  - About dengan feature highlights
+  - Services showcase
+  - Portfolio gallery
+  - Customer testimonials
+  - Pricing plans
+  - Contact footer
+
+## 🚀 Tech Stack
+
+- **Framework**: Next.js 15.3.4
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **Build Tool**: Turbopack
+- **Package Manager**: NPM
+
+## 📦 Instalasi
+
+1. Clone repository
+```bash
+git clone https://github.com/your-username/sinidesain-web.git
+cd sinidesain-web
+```
+
+2. Install dependencies
+```bash
+npm install
+```
+
+3. Jalankan development server
+```bash
+npm run dev
+```
+
+4. Buka [http://localhost:3000/LandingPage](http://localhost:3000/LandingPage)
+
+## 🏗️ Scripts Available
+
+```bash
+npm run dev          # Jalankan development server
+npm run build        # Build untuk production
+npm run start        # Jalankan production server
+npm run lint         # Run ESLint
+```
+
+## 📁 Struktur Project
+
+```
+sinidesain-web/
+├── public/
+│   ├── sinifixxx.png      # Logo utama
+│   ├── siniputih.png      # Logo putih untuk dark background
+│   └── ...
+├── src/
+│   ├── components/
+│   │   ├── ui/            # Reusable UI components
+│   │   └── Logo.tsx       # Logo component
+│   ├── lib/
+│   │   └── utils.ts       # Utility functions
+│   ├── pages/
+│   │   └── LandingPage.tsx # Main landing page
+│   └── styles/
+│       └── globals.css    # Global styles
+└── ...
+```
+
+## 🎨 Customization
+
+### Logo
+Ganti file logo di folder `public/`:
+- `sinifixxx.png` - Logo utama
+- `siniputih.png` - Logo untuk background gelap
+
+### Kontak
+Update nomor WhatsApp di file `LandingPage.tsx`:
+```typescript
+// Ganti nomor ini dengan nomor WA Anda
+href="https://wa.me/628813701497"
+```
+
+### Warna Brand
+Sesuaikan warna di `tailwind.config.js` atau langsung di components.
+
+## 📱 Responsive Breakpoints
+
+- **Mobile**: < 640px
+- **Tablet**: 640px - 1024px  
+- **Desktop**: > 1024px
+
+## 🚀 Deployment
+
+### Vercel (Recommended)
+1. Push ke GitHub
+2. Connect repository di [Vercel](https://vercel.com)
+3. Deploy otomatis
+
+### Netlify
+1. Build project: `npm run build`
+2. Upload folder `out/` ke Netlify
+
+### Manual
+```bash
+npm run build
+npm run start
+```
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+## 👨‍💻 Developer
+
+Dibuat untuk **SiniDesain** - Jasa desain grafis profesional untuk UMKM, kreator, dan bisnis online.
+
+---
+
+⭐ **Star this repo** jika bermanfaat!
+
+📞 **Butuh jasa desain?** Hubungi [SiniDesain via WhatsApp](https://wa.me/628813701497)
 
 ## Getting Started
 
