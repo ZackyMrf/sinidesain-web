@@ -43,7 +43,7 @@ export const PromoSection = () => {
               title: "Poster Promosi",
               price: "20K",
               originalPrice: "35K",
-              features: ["1 Konsep desain", "2 Revisi", "Pengerjaan 1-2 hari", "File PNG/JPG"],
+              features: ["1 Konsep desain", "2 Revisi", "Pengerjaan Cepat", "File PNG/JPG"],
               icon: "📸",
               popular: true
             },
@@ -59,7 +59,7 @@ export const PromoSection = () => {
               title: "Daftar Menu Single",
               price: "40K",
               originalPrice: "65K",
-              features: ["Cocok gerobak/kafe kecil", "Pengerjaan 24 jam", "Layout profesional", "File print ready"],
+              features: ["Cocok gerobak/kafe kecil", "Pengerjaan Cepat", "Layout profesional", "File print ready"],
               icon: "📋",
               popular: true
             },

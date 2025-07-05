@@ -1,6 +1,9 @@
 {
   "name": "sinidesain-web",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "description": "SiniDesain - Jasa Desain Grafis Profesional",
+  "author": "SiniDesain",
+  "homepage": "https://sinidesain.vercel.app",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
